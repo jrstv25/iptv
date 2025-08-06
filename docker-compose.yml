@@ -1,13 +1,10 @@
-version: "3.8"
-
 services:
-  debridio-m3u:
-    build: .
-    container_name: debridio-m3u
+  iptv:
+    image: ghcr.io/jrstv25/iptv:latest
+    platform: linux/amd64
+    container_name: iptv
     ports:
       - "9697:9697"
-    env_file:
-      - .env
     volumes:
       - ./logs:/app/logs
     restart: unless-stopped
